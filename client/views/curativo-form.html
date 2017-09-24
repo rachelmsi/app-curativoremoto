@@ -1,0 +1,76 @@
+<section>
+  <form name="form" ng-submit="submitForm()">
+    <fieldset>
+      <legend>{{action}} Curativo</legend>
+
+      <div class="form-group">
+        <label>Nome Paciente</label>
+        <input type="text" ng-model="curativo.nomePaciente"></input>
+      </div>
+
+      <div class="form-group">
+        <label>Tipo de Lesão</label>
+        <select
+            ng-disabled="isDisabled"
+            ng-model="selectedLesao"
+            ng-options="lesao as lesao.tipo for lesao in lesoes"></select>
+      </div>
+
+      <div class="form-group">
+        <label>Material para Limpeza</label>
+        <select
+            ng-disabled="isDisabled"
+            ng-model="selectedLimpeza"
+            ng-options="limpeza as limpeza.limpeza for limpeza in limpezas"></select>
+      </div>
+      <div class="form-group">
+        <label>Material para Aplicacão</label>
+        <select
+            ng-disabled="isDisabled"
+            ng-model="selectedAplicacao"
+            ng-options="aplicacao as aplicacao.aplicacao for aplicacao in aplicacaos"></select>
+      </div>
+      <div class="form-group">
+        <label>Material para Oclusão</label>
+        <select
+            ng-disabled="isDisabled"
+            ng-model="selectedOclusao"
+            ng-options="oclusao as oclusao.oclusao for oclusao in oclusaos"></select>
+      </div>
+      <div class="form-group">
+        <label>Material para Fixação</label>
+        <select
+            ng-disabled="isDisabled"
+            ng-model="selectedFixacao"
+            ng-options="fixacao as fixacao.fixacao for fixacao in fixacaos"></select>
+      </div>
+
+      <div class="form-group">
+        <label>Frequência</label>
+        <input type="radio" ng-model="curativo.frequencia" value="2 em 2 horas">2 em 2 horas
+        <input type="radio" ng-model="curativo.frequencia" value="4 em 4 horas">4 em 4 horas
+        <input type="radio" ng-model="curativo.frequencia" value="6 em 6 horas">6 em 6 horas
+        <input type="radio" ng-model="curativo.frequencia" value="12 em 12 horas">12 em 12 horas
+        <input type="radio" ng-model="curativo.frequencia" value="24 em 24 horas">24 em 24 horas
+        <input type="radio" ng-model="curativo.frequencia" value="48 em 48 horas">48 em 48 horas
+      </div>
+
+      <form name="form-group" ng-controller="DateController as dateCtrl">
+        <label for="exampleInput">Coloque uma data:</label>
+        <input type="date" id="exampleInput" name="input" ng-model="curativo.data"
+            placeholder="yyyy-MM-dd" min="2017-01-01" max="2017-12-31" required />
+        <div role="alert">
+          <span class="error" ng-show="myForm.input.$error.required">
+              Required!</span>
+          <span class="error" ng-show="myForm.input.$error.date">
+              Not a valid date!</span>
+          </div>
+      </form>
+
+      <div class="actions">
+        <label></label>
+        <button>{{action}} Curativo</button>
+      </div>
+    </fieldset>
+  </form>
+<section>

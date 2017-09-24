@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "curativoremoto"
+  },
+  "AccessToken": {
+    "dataSource": "curativoremoto",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "curativoremoto",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "curativoremoto",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "curativoremoto",
+    "public": false
+  },
+  "Message": {
+    "dataSource": null
+  },
+  "Lesao": {
+    "dataSource": "curativoremoto",
+    "public": true
+  },
+  "Materiais": {
+    "dataSource": "curativoremoto",
+    "public": true
+  },
+  "Curativo": {
+    "dataSource": "curativoremoto",
+    "public": true
+  },
+  "Usuario": {
+    "dataSource": "curativoremoto",
+    "public": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "curativoremoto": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "curativoremoto",
+    "password": "",
+    "name": "curativoremoto",
+    "user": "",
+    "connector": "mongodb"
+  }
+}

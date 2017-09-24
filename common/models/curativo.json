@@ -1,0 +1,94 @@
+{
+  "name": "Curativo",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "tipoDeLesao": {
+      "type": "string",
+      "required": true
+    },
+    "limpeza": {
+      "type": "string",
+      "required": true
+    },
+    "aplicacao": {
+      "type": "string",
+      "required": true
+    },
+    "oclusao": {
+      "type": "string",
+      "required": true
+    },
+    "fixacao": {
+      "type": "string",
+      "required": true
+    },
+    "nomePaciente": {
+      "type": "string",
+      "required": true
+    },
+    "frequencia": {
+      "type": "string",
+      "required": true
+    },
+    "data": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "materiais": {
+      "type": "hasMany",
+      "model": "Materiais",
+      "foreignKey": ""
+    },
+    "usuario": {
+      "type": "belongsTo",
+      "model": "Usuario",
+      "foreignKey": "usuarioId"
+    },
+    "lesao": {
+      "type": "belongsTo",
+      "model": "Lesao",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
